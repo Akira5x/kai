@@ -1,46 +1,20 @@
-if game.CoreGui:FindFirstChild("SOMEXHUBMODILE") then
-    game.CoreGui:FindFirstChild("SOMEXHUBMODILE"):Destroy()
-end
+local ScreenGui = Instance.new("ScreenGui")
+local ImageButton = Instance.new("ImageButton")
 
-local SOMEXHUBMODILE = Instance.new("ScreenGui")
-local MODILEGUISOMEXHUB = Instance.new("TextButton")
-local MODILEGUISOMEXHUBHUI = Instance.new("UICorner")
-local MODILEMAGE = Instance.new("ImageLabel")
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-SOMEXHUBMODILE.Name = "SOMEXHUBMODILE"
-        SOMEXHUBMODILE.Parent = game.CoreGui
-        SOMEXHUBMODILE.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ImageButton.Parent = ScreenGui
+ImageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ImageButton.BorderSizePixel = 0
+ImageButton.Position = UDim2.new(0.1208337, 0, 0.0952890813, 0)
+ImageButton.Size = UDim2.new(0, 50, 0, 50)
+ImageButton.Image = "https://www.roblox.com/library/10398887347/DOG"
+ImageButton.MouseButton1Down:connect(function()
+    game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
+    game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
+end)
 
-        MODILEGUISOMEXHUB.Name = "KAIHUB"
-        MODILEGUISOMEXHUB.Parent = SOMEXHUBMODILE
-        MODILEGUISOMEXHUB.BackgroundColor3 = Color3.fromRGB(30,20,20)
-        MODILEGUISOMEXHUB.BorderSizePixel = 0
-        MODILEGUISOMEXHUB.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-        MODILEGUISOMEXHUB.Size = UDim2.new(0, 50, 0, 50)
-        MODILEGUISOMEXHUB.Font = Enum.Font.SourceSans
-        MODILEGUISOMEXHUB.Text = "F"
-        MODILEGUISOMEXHUB.TextColor3 = Color3.fromRGB(255, 255, 0)
-        MODILEGUISOMEXHUB.TextSize = 14.000
-        MODILEGUISOMEXHUB.Draggable = true
-        MODILEGUISOMEXHUB.MouseButton1Click:Connect(function()
-        game.CoreGui:FindFirstChild("SOMEXHUB").Enabled = not game.CoreGui:FindFirstChild("SOMEXHUB").Enabled
-        end)
-        do
-        if game:GetService("CoreGui"):FindFirstChild("SOMEXHUB") then
-        end
-        end
-
-        MODILEGUISOMEXHUBHUI.Name = "MODILEGUISOMEXHUBHUI"
-        MODILEGUISOMEXHUBHUI.Parent = MODILEGUISOMEXHUB
-
-        MODILEMAGE.Name = "MODILEMAGE"
-        MODILEMAGE.Parent = MODILEGUISOMEXHUB
-        MODILEMAGE.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        MODILEMAGE.BackgroundTransparency = 1.000
-        MODILEMAGE.BorderSizePixel = 0
-        MODILEMAGE.Position = UDim2.new(0, 3, 0, 2)
-        MODILEMAGE.Size = UDim2.new(0, 45, 0, 45)
-        MODILEMAGE.Image = "rbxassetid://10398887335"
 
 do local GUI = game.CoreGui:FindFirstChild("SOMEXHUB");if GUI then GUI:Destroy();end;if _G.Color == nil then
        _G.Color = Color3.fromRGB(255,255,0)
@@ -125,20 +99,37 @@ function Update:Window(text,logo,keybind)
 	Main.Position = UDim2.new(0.5, 0, 0.5, 0)
 	Main.Size = UDim2.new(0, 0, 0, 0)
 	
-	Main:TweenSize(UDim2.new(0, 656, 0, 350),"Out","Quad",0.4,true)
-	
+	Main:TweenSize(UDim2.new(0, 656, 0, 400),"Out","Quad",0.4,true)
+
+	local MCNR = Instance.new("UICorner")
+	MCNR.Name = "MCNR"
+	MCNR.Parent = Main
+
 	local Top = Instance.new("Frame")
 	Top.Name = "Top"
 	Top.Parent = Main
 	Top.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
 	Top.Size = UDim2.new(0, 656, 0, 27)
-	
+
+	local TCNR = Instance.new("UICorner")
+	TCNR.Name = "TCNR"
+	TCNR.Parent = Top
+
+	local Logo = Instance.new("ImageLabel")
+	Logo.Name = "Logo"
+	Logo.Parent = Top
+	Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Logo.BackgroundTransparency = 1.000
+	Logo.Position = UDim2.new(0, 10, 0, 1)
+	Logo.Size = UDim2.new(0, 25, 0, 25)
+	Logo.Image = "rbxassetid://"..tostring(10398887335)
+
 	local Name = Instance.new("TextLabel")
 	Name.Name = "Name"
 	Name.Parent = Top
 	Name.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Name.BackgroundTransparency = 1.000
-	Name.Position = UDim2.new(0.0609756112, -25, 0, 0)
+	Name.Position = UDim2.new(0.0609756112, 0, 0, 0)
 	Name.Size = UDim2.new(0, 61, 0, 27)
 	Name.Font = Enum.Font.GothamSemibold
 	Name.Text = text
@@ -146,47 +137,51 @@ function Update:Window(text,logo,keybind)
 	Name.TextSize = 17.000
 
 	local Hub = Instance.new("TextLabel")
-	Hub.Name = "KAIHub"
+	Hub.Name = "KaiHub"
 	Hub.Parent = Top
 	Hub.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
 	Hub.BackgroundTransparency = 1.000
-	Hub.Position = UDim2.new(0, 85, 0, 0)
+	Hub.Position = UDim2.new(0, 110, 0, 0)
 	Hub.Size = UDim2.new(0, 81, 0, 27)
 	Hub.Font = Enum.Font.GothamSemibold
-	Hub.Text = " HUB"
+	Hub.Text = "  HUB | BF |OWNERHmm_man#9136"
 	Hub.TextColor3 = _G.Color
 	Hub.TextSize = 17.000
 	Hub.TextXAlignment = Enum.TextXAlignment.Left
+
+	local BindButton = Instance.new("TextButton")
+	BindButton.Name = "BindButton"
+	BindButton.Parent = Top
+	BindButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	BindButton.BackgroundTransparency = 1.000
+	BindButton.Position = UDim2.new(0.847561002, 0, 0, 0)
+	BindButton.Size = UDim2.new(0, 100, 0, 27)
+	BindButton.Font = Enum.Font.GothamSemibold
+	BindButton.Text = "[ "..string.gsub(tostring(keybind),"Enum.KeyCode.","").." ]"
+	BindButton.TextColor3 = Color3.fromRGB(100, 100, 100)
+	BindButton.TextSize = 11.000
 	
-	local Hubb = Instance.new("TextLabel")
-	Hubb.Name = "KAIHubb"
-	Hubb.Parent = Top
-	Hubb.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-	Hubb.BackgroundTransparency = 1.000
-	Hubb.Position = UDim2.new(0, 480, 0, 0)
-	Hubb.Size = UDim2.new(0, 81, 0, 27)
-	Hubb.Font = Enum.Font.GothamSemibold
-	Hubb.Text = "VERSION :MOBILE"
-	Hubb.TextColor3 = _G.Color
-	Hubb.TextSize = 17.000
-	Hubb.TextXAlignment = Enum.TextXAlignment.Left
+	BindButton.MouseButton1Click:Connect(function ()
+		BindButton.Text = "[ ... ]"
+		local inputwait = game:GetService("UserInputService").InputBegan:wait()
+		local shiba = inputwait.KeyCode == Enum.KeyCode.Unknown and inputwait.UserInputType or inputwait.KeyCode
+
+		if shiba.Name ~= "Focus" and shiba.Name ~= "MouseMovement" then
+			BindButton.Text = "[ "..shiba.Name.." ]"
+			yoo = shiba.Name
+		end
+	end)
 
 	local Tab = Instance.new("Frame")
 	Tab.Name = "Tab"
 	Tab.Parent = Main
 	Tab.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
-	Tab.BackgroundTransparency = 1.000
 	Tab.Position = UDim2.new(0, 5, 0, 30)
-	Tab.Size = UDim2.new(0, 150, 0, 350)
+	Tab.Size = UDim2.new(0, 150, 0, 365)
 
-local LogoHub = Instance.new("ImageLabel")
-	LogoHub.Name = "LogoHub"
-	LogoHub.Parent = Tab
-	LogoHub.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	LogoHub.BackgroundTransparency = 1.000
-	LogoHub.Position = UDim2.new(0, 0, 0, 1)
-	LogoHub.Size = UDim2.new(0, 150, 0, 150)
-	LogoHub.Image = "http://www.roblox.com/asset/?id="..tostring(10398887335)
+	local TCNR = Instance.new("UICorner")
+	TCNR.Name = "TCNR"
+	TCNR.Parent = Tab
 
 	local ScrollTab = Instance.new("ScrollingFrame")
 	ScrollTab.Name = "ScrollTab"
@@ -216,6 +211,10 @@ local LogoHub = Instance.new("ImageLabel")
 	Page.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
 	Page.Position = UDim2.new(0.245426834, 0, 0.075000003, 0)
 	Page.Size = UDim2.new(0, 490, 0, 365)
+
+	local PCNR = Instance.new("UICorner")
+	PCNR.Name = "PCNR"
+	PCNR.Parent = Page
 
 	local MainPage = Instance.new("Frame")
 	MainPage.Name = "MainPage"
@@ -251,37 +250,26 @@ local LogoHub = Instance.new("ImageLabel")
 				Main:TweenSize(UDim2.new(0, 0, 0, 0),"In","Quad",0.4,true)
 			else
 				uihide = false
-				Main:TweenSize(UDim2.new(0, 656, 0, 350),"Out","Quad",0.4,true)
+				Main:TweenSize(UDim2.new(0, 656, 0, 400),"Out","Quad",0.4,true)
 			end
 		end
 	end)
 	
 	local uitab = {}
 	
-	function uitab:Tab(text,image)
-	    local Image = image
-	    
+	function uitab:Tab(text)
 		local TabButton = Instance.new("TextButton")
 		TabButton.Parent = ScrollTab
 		TabButton.Name = text.."Server"
 		TabButton.Text = text
-		TabButton.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
-		TabButton.BackgroundTransparency = 0.150
+		TabButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		TabButton.BackgroundTransparency = 1.000
 		TabButton.Size = UDim2.new(0, 130, 0, 23)
 		TabButton.Font = Enum.Font.GothamSemibold
 		TabButton.TextColor3 = Color3.fromRGB(225, 225, 225)
 		TabButton.TextSize = 15.000
 		TabButton.TextTransparency = 0.500
 
-            local PageImage = Instance.new("ImageLabel")
-            PageImage.Name = "PageImage"
-            PageImage.Parent = TabButton
-            PageImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            PageImage.BackgroundTransparency = 1.000
-            PageImage.Position = UDim2.new(0, 5, 0, 5)
-            PageImage.Size = UDim2.new(0, 15, 0, 15)
-            PageImage.Image = "rbxassetid://"..tostring(10398887335)
-            
 		local MainFramePage = Instance.new("ScrollingFrame")
 		MainFramePage.Name = text.."_Page"
 		MainFramePage.Parent = PageList
@@ -360,7 +348,6 @@ local LogoHub = Instance.new("ImageLabel")
 			local TextBtn = Instance.new("TextButton")
 			local UICorner_2 = Instance.new("UICorner")
 			local Black = Instance.new("Frame")
-			local IMGTOG = Instance.new("ImageLabel")
 			local UICorner_3 = Instance.new("UICorner")
 			
 			Button.Name = "Button"
@@ -392,7 +379,7 @@ local LogoHub = Instance.new("ImageLabel")
 			Black.BorderSizePixel = 0
 			Black.Position = UDim2.new(0, 1, 0, 1)
 			Black.Size = UDim2.new(0, 468, 0, 29)
-	        
+			
 			UICorner_3.CornerRadius = UDim.new(0, 5)
 			UICorner_3.Parent = Black
 
@@ -431,7 +418,6 @@ local LogoHub = Instance.new("ImageLabel")
 			local ToggleImage = Instance.new("Frame")
 			local UICorner_3 = Instance.new("UICorner")
 			local Circle = Instance.new("Frame")
-			local IMGTOG = Instance.new("ImageLabel")
 			local UICorner_4 = Instance.new("UICorner")
 
 			Toggle.Name = "Toggle"
@@ -475,28 +461,6 @@ local LogoHub = Instance.new("ImageLabel")
 
 			UICorner_3.CornerRadius = UDim.new(0, 10)
 			UICorner_3.Parent = ToggleImage
-
-local tggc = Instance.new("TextLabel")
-	tggc.Name = "tggc"
-	tggc.Parent = Toggle
-	tggc.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	tggc.BackgroundTransparency = 1.000
-	tggc.Position = UDim2.new(0, 40, 0, 3)
-	tggc.Size = UDim2.new(0, 81, 0, 27)
-	tggc.Font = Enum.Font.GothamSemibold
-    tggc.Text = "|"
-	tggc.TextColor3 = _G.Color
-	tggc.TextSize = 26.000
-	tggc.TextXAlignment = Enum.TextXAlignment.Left
-
-local LogoToggle = Instance.new("ImageLabel")
-	LogoToggle.Name = "LogoToggle"
-	LogoToggle.Parent = Toggle
-	LogoToggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	LogoToggle.BackgroundTransparency = 1.000
-	LogoToggle.Position = UDim2.new(0, 7, 0, 2)
-	LogoToggle.Size = UDim2.new(0, 26, 0, 26)
-	LogoToggle.Image = "http://www.roblox.com/asset/?id="..tostring(10398887335)
 
 			Circle.Name = "Circle"
 			Circle.Parent = ToggleImage
@@ -592,10 +556,10 @@ local LogoToggle = Instance.new("ImageLabel")
 			DropImage.Parent = Dropdown
 			DropImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			DropImage.BackgroundTransparency = 1.000
-			DropImage.Position = UDim2.new(0, 435, 0, 6)
+			DropImage.Position = UDim2.new(0, 445, 0, 6)
 			DropImage.Rotation = 180.000
 			DropImage.Size = UDim2.new(0, 20, 0, 20)
-			DropImage.Image = "rbxassetid://10162644180"
+			DropImage.Image = "rbxassetid://6031090990"
 			
 			DropButton.Name = "DropButton"
 			DropButton.Parent = Dropdown
@@ -1072,6 +1036,7 @@ local LogoToggle = Instance.new("ImageLabel")
 	end
 	return uitab
 end
+
 if game.PlaceId == 2753915549 then
         World1 = true
     elseif game.PlaceId == 4442272183 then
@@ -2045,14 +2010,14 @@ if game.PlaceId == 2753915549 then
     
     function TP1(Pos)
     Distance = (Pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
-    if Distance < 360 then
+    if Distance < 1600 then
         Speed = 1200
     elseif Distance < 1000 then
-        Speed = 360
-    elseif Distance < 360 then
+        Speed = 1600
+    elseif Distance < 1000 then
         Speed = 1200
     elseif Distance >= 1000 then
-        Speed = 360
+        Speed = 1600
     end
     game:GetService("TweenService"):Create(
         game.Players.LocalPlayer.Character.HumanoidRootPart,
@@ -2063,10 +2028,10 @@ end
     
     function TP(Pos)
         Distance = (Pos.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
-        if Distance < 250 then
-            Speed = 600
+        if Distance < 2500 then
+            Speed = 1000
         elseif Distance >= 1000 then
-            Speed = 200
+            Speed = 2000
         end
         game:GetService("TweenService"):Create(
             game:GetService("Players").LocalPlayer.Character.HumanoidRootPart,
@@ -2155,15 +2120,25 @@ end
 
 
 
-local Library = Update:Window("FROPPA","10256042104",Enum.KeyCode.RightControl);
-Main = Library:Tab("Menu",6026568198)
-Ss = Library:Tab("Stats",7040410130)
-P = Library:Tab("PvP Mode",7251993295)
-T = Library:Tab("Teleport",6035190846)
-R = Library:Tab("Raid",7044284832)
-S = Library:Tab("Item",6031265976)
-D = Library:Tab("Devil Fruit",7044233235)
-Misc = Library:Tab("Misc Game",6034509993)
+local Library = Update:Window("FROPPA","10155226096",Enum.KeyCode.RightControl);
+Main = Library:Tab("Main","6023426909")
+M = Library:Tab("Misc Farm")
+Ss = Library:Tab("Stats")
+P = Library:Tab("Player")
+R = Library:Tab("Raid")
+T = Library:Tab("Teleport")
+S = Library:Tab("Shop")
+D = Library:Tab("Devil Fruit")
+Misc = Library:Tab("Misc")
+
+Main:Line()
+
+Main:Label("Welcome Froppa Hub Community")
+
+local Time = Main:Label("Executor Time");spawn(function() getgenv().Time = true;while true do wait(.1) UpdateTime() end end);function UpdateTime() local date = os.date("*t");local hour = (date.hour) % 24;local ampm = hour < 12 and "AM" or "PM";local timezone = string.format("%02i:%02i:%02i %s", ((hour -1) % 12) + 1, date.min, date.sec, ampm);local datetime = string.format("%02d/%02d/%04d", date.day, date.month, date.year);local LocalizationService = game:GetService("LocalizationService");local Players = game:GetService("Players");local player = Players.LocalPlayer;local name = player.Name;local result, code = pcall(function()   return LocalizationService:GetCountryRegionForPlayerAsync(player)  end);Time:Set(" : " .. timezone);Time:Set("Executor Time: " .. datetime .. " [ " .. code .. " ]");spawn(function() if getgenv().Time then pcall(function()  while wait() do  Time()  end end) end end) end
+
+Main:Seperator("Main Farm")
+
 
 Main:Toggle("Auto SetSpawn Point",true,function(x)
     _G.Set = x
@@ -2238,7 +2213,7 @@ Main:Toggle("AutoFarm Level",_G.AutoFarm,function(value)
                                                 EquipWeapon(_G.SelectWeapon)
                                                 AutoHaki()                                            
                                                 PosMon = v.HumanoidRootPart.CFrame
-                                                TP1(v.HumanoidRootPart.CFrame * CFrame.new(2,15,3))
+                                                TP1(v.HumanoidRootPart.CFrame * CFrame.new(2,10,5))
                                                 v.HumanoidRootPart.CanCollide = false
                                                 v.Humanoid.WalkSpeed = 0
                                                 v.Head.CanCollide = false
@@ -2276,8 +2251,7 @@ Main:Toggle("AutoFarm Level",_G.AutoFarm,function(value)
         end
     end)
     
-
-       Main:Seperator("Dought Boss")
+    Main:Seperator("Dought Boss")
     
         local MobKilled = Main:Label("Killed")
     
@@ -2296,10 +2270,10 @@ Main:Toggle("AutoFarm Level",_G.AutoFarm,function(value)
             end)
         end
     end)
-       
-
+    
     Main:Toggle("Auto Dought Boss",_G.AutoDoughtBoss,function(value)
         _G.AutoDoughtBoss = value
+        _G.BringMonster = value
         StopTween(_G.AutoDoughtBoss)
     end)
     
@@ -2765,7 +2739,7 @@ end)
 
         _G.Kill_At = value
     end)
- 
+    
  
     Main:Toggle("Skill Z",true,function(value)
         _G.SkillZ = value
@@ -2776,33 +2750,18 @@ end)
         _G.SkillX = value
     end)
     
-    
     Main:Toggle("Skill C",true,function(value)
         _G.SkillC = value
     end)
-    
     
      Main:Toggle("Skill V",true,function(value)
         _G.SkillV = value
     end)
     
-    
-    Ss:Seperator("Stats")
-
-    local Pointstat = Ss:Label("Stat Points")
-    
-    spawn(function()
-        while wait() do
-            pcall(function()
-                Pointstat:Set("Stat Points : "..tostring(game:GetService("Players")["LocalPlayer"].Data.Points.Value))
-            end)
-        end
-    end)
-    
-    Main:Seperator("World")
+    M:Seperator("World")
 
     if World1 then
-        Main:Toggle("Auto Second Sea",_G.AutoSecondSea,function(value)
+        M:Toggle("Auto Second Sea",_G.AutoSecondSea,function(value)
             _G.AutoSecondSea = value
             StopTween(_G.AutoSecondSea)
         end)
@@ -2865,8 +2824,7 @@ end)
     
     if World2 then
 
-    
-    Main:Toggle("Auto Third Sea",_G.AutoThirdSea,function(value)
+        M:Toggle("Auto Third Sea",_G.AutoThirdSea,function(value)
             _G.AutoThirdSea = value
             StopTween(_G.AutoThirdSea)
         end)
@@ -2912,11 +2870,11 @@ end)
                 end
             end
         end)
-   
+    end
     
     if World2 then
 
-        Main:Toggle("Auto Farm Factory",_G.AutoFactory,function(value)
+        M:Toggle("Auto Farm Factory",_G.AutoFactory,function(value)
             _G.AutoFactory = value
             StopTween(_G.AutoFactory)
         end)
@@ -2945,7 +2903,7 @@ end)
             end
         end)
     elseif World3 then
-        Main:Toggle("Auto Mystic Island",_G.AutoMysticIsland,function(value)
+        M:Toggle("Auto Mystic Island",_G.AutoMysticIsland,function(value)
             _G.AutoMysticIsland = value
         end)
     
@@ -2962,10 +2920,31 @@ end)
         end)
     end
     
+    M:Seperator("Misc Weapon")
+        WeaponList = {}
     
-    Main:Seperator("Fighting Style")
+    for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do  
+        if v:IsA("Tool") then
+            table.insert(WeaponList ,v.Name)
+        end
+    end
     
-    Main:Toggle("Auto Superhuman",_G.AutoSuperhuman,function(value)
+    local SelectWeapona = M:Dropdown("Select Weapon",WeaponList,function(value)
+        _G.SelectWeapon = value
+    end)
+    
+    M:Button("Refresh Weapon",function()
+        SelectWeapona:Clear()
+        for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do  
+            SelectWeapona:Add(v.Name)
+        end
+    end)
+    
+    
+    
+    M:Seperator("Fighting Style")
+    
+    M:Toggle("Auto Superhuman",_G.AutoSuperhuman,function(value)
         _G.AutoSuperhuman = value
     end)
     
@@ -3042,7 +3021,7 @@ end)
         end)
     end)
     
-    Main:Toggle("Auto DeathStep",_G.AutoDeathStep,function(value)
+    M:Toggle("Auto DeathStep",_G.AutoDeathStep,function(value)
         _G.AutoDeathStep = value
     end)
     
@@ -3068,7 +3047,7 @@ end)
         end
     end)
     
-    Main:Toggle("Auto Sharkman Karate",_G.AutoSharkman,function(value)
+    M:Toggle("Auto Sharkman Karate",_G.AutoSharkman,function(value)
         _G.AutoSharkman = value
     end)
     
@@ -3116,7 +3095,7 @@ end)
         end)
     end)
     
-    Main:Toggle("Auto Electric Claw",_G.AutoElectricClaw,function(value)
+    M:Toggle("Auto Electric Claw",_G.AutoElectricClaw,function(value)
         _G.AutoElectricClaw = value
         StopTween(_G.AutoElectricClaw)
     end)
@@ -3187,7 +3166,7 @@ end)
         end)
     end)
     
-    Main:Toggle("Auto Dragon Talon",_G.AutoDragonTalon,function(value)
+    M:Toggle("Auto Dragon Talon",_G.AutoDragonTalon,function(value)
         _G.AutoDragonTalon = value
     end)
     
@@ -3213,11 +3192,10 @@ end)
         end
     end)
     
-   Main:Seperator("Misc Mastery")
+   M:Seperator("Misc Mastery")
     
-    Main:Toggle("Auto Farm BF Mastery",_G.AutoFarmFruitMastery,function(value)
+    M:Toggle("Auto Farm BF Mastery",_G.AutoFarmFruitMastery,function(value)
         _G.AutoFarmFruitMastery = value
-       _G.Kill_At = value
         StopTween(_G.AutoFarmFruitMastery)
         if _G.AutoFarmFruitMastery == false then
             UseSkill = false 
@@ -3472,9 +3450,8 @@ end)
         end)
     end)
     
-    Main:Toggle("Auto Farm Gun Mastery",_G.AutoFarmGunMastery,function(value)
+    M:Toggle("Auto Farm Gun Mastery",_G.AutoFarmGunMastery,function(value)
         _G.AutoFarmGunMastery = value
-        _G.Kill_At = value
         StopTween(_G.AutoFarmGunMastery)
     end)
     
@@ -3558,14 +3535,14 @@ end)
     end)
 
     
-    Main:Seperator("Misc Buddy Sword")
+    M:Seperator("Misc Buddy Sword")
     
-    Main:Toggle("Auto Buddy Sword",_G.AutoBudySword,function(value)
+    M:Toggle("Auto Buddy Sword",_G.AutoBudySword,function(value)
         _G.AutoBudySword = value
         StopTween(_G.AutoBudySword)
     end)
     
-    Main:Toggle("Auto Buddy Sword Hop",_G.AutoBudySwordHop,function(value)
+    M:Toggle("Auto Buddy Sword Hop",_G.AutoBudySwordHop,function(value)
         _G.AutoBudySwordHop = value
     end)
     
@@ -3605,14 +3582,14 @@ end)
         end
     end)
     
-        Main:Seperator("Misc Oder Sword")
+        M:Seperator("Misc Oder Sword")
     
-    Main:Toggle("Auto Oder Sword (New !)", _G.AutoOderSword,function(value)
+    M:Toggle("Auto Oder Sword (New !)", _G.AutoOderSword,function(value)
          _G.AutoOderSword = value
         StopTween( _G.AutoOderSword)
     end)
     
-    Main:Toggle("Auto Oder Sword Hop (New !)", _G.AutoOderSwordHop,function(value)
+    M:Toggle("Auto Oder Sword Hop (New !)", _G.AutoOderSwordHop,function(value)
          _G.AutoOderSwordHop = value
     end)
     
@@ -3652,7 +3629,7 @@ end)
         end
     end)
     
-    Main:Button("Buy Microchip Oder Boss",function()
+    M:Button("Buy Microchip Oder Boss",function()
     local args = {
        [1] = "BlackbeardReward",
        [2] = "Microchip",
@@ -3661,15 +3638,15 @@ end)
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 end)
 
-    Main:Button("Start Go To Raid Oder Boss",function()
+    M:Button("Start Go To Raid Oder Boss",function()
         if World2 then
             fireclickdetector(game:GetService("Workspace").Map.CircleIsland.RaidSummon.Button.Main.ClickDetector)
         end
     end)
     
-    Main:Seperator("Misc Elite")
+    M:Seperator("Misc Elite")
     
-    local EliteProgress = Main:Label("")
+    local EliteProgress = M:Label("")
     
     spawn(function()
         pcall(function()
@@ -3679,7 +3656,7 @@ end)
         end)
     end)
     
-    Main:Toggle("Auto Elite Hunter",_G.AutoElitehunter,function(value)
+    M:Toggle("Auto Elite Hunter",_G.AutoElitehunter,function(value)
         _G.AutoElitehunter = value
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
         StopTween(_G.AutoElitehunter)
@@ -3741,18 +3718,18 @@ end)
         end
     end)
     
-    Main:Toggle("Auto Elite Hunter Hop",_G.AutoEliteHunterHop,function(value)
+    M:Toggle("Auto Elite Hunter Hop",_G.AutoEliteHunterHop,function(value)
         _G.AutoEliteHunterHop = value
     end)
     
-    Main:Seperator("Misc Hallow Scythe")
+    M:Seperator("Seperator Hallow Scythe")
     
-    Main:Toggle("Auto Hallow Scythe",_G.AutoFarmBossHallow,function(value)
+    M:Toggle("Auto Hallow Scythe",_G.AutoFarmBossHallow,function(value)
         _G.AutoFarmBossHallow = value
         StopTween(_G.AutoFarmBossHallow)
     end)
     
-    Main:Toggle("Auto Hallow Scythe Hop",_G.AutoFarmBossHallowHop,function(value)
+    M:Toggle("Auto Hallow Scythe Hop",_G.AutoFarmBossHallowHop,function(value)
         _G.AutoFarmBossHallowHop = value
     end)
     
@@ -3792,9 +3769,9 @@ end)
         end
     end)
     
-    Main:Seperator("Dark Dagger")
+    M:Seperator("Dark Dagger")
     
-    Main:Toggle("Auto Kill Admin Boss",_G.AutoDarkDagger,function(value)
+    M:Toggle("Auto Kill Admin Boss",_G.AutoDarkDagger,function(value)
         _G.AutoDarkDagger = value
         StopTween(_G.AutoDarkDagger)
     end)
@@ -3827,7 +3804,7 @@ end)
         end)
     end)
     
-    Main:Toggle("Auto Kill Admin Boss Hop",_G.AutoDarkDagger_Hop,function(value)
+    M:Toggle("Auto Kill Admin Boss Hop",_G.AutoDarkDagger_Hop,function(value)
         _G.AutoDarkDagger_Hop = value
     end)
     
@@ -3841,9 +3818,9 @@ end)
         end)
     end)
     
-    Main:Seperator("Misc Swan Glasses")
+    M:Seperator("Misc Swan Glasses")
     
-    Main:Toggle("Auto Swan Glasses",_G.AutoFarmSwanGlasses,function(value)
+    M:Toggle("Auto Swan Glasses",_G.AutoFarmSwanGlasses,function(value)
         _G.AutoFarmSwanGlasses = value
         StopTween(_G.AutoFarmSwanGlasses)
     end)
@@ -3879,7 +3856,7 @@ end)
         end)
     end)
     
-    Main:Toggle("Auto Swan Glasses Hop",_G.AutoFarmSwanGlasses_Hop,function(value)
+    M:Toggle("Auto Swan Glasses Hop",_G.AutoFarmSwanGlasses_Hop,function(value)
         _G.AutoFarmSwanGlasses_Hop = value
     end)
     
@@ -3893,9 +3870,9 @@ end)
         end)
     end)
     
-    Main:Seperator("Misc Bone")
+    M:Seperator("Misc Bone")
     
-    local BoneFarm = Main:Toggle("Auto Farm Bone",_G.Auto_Bone,function(value)
+    local BoneFarm = M:Toggle("Auto Farm Bone",_G.Auto_Bone,function(value)
         _G.Auto_Bone = value
         StopTween(_G.Auto_Bone)
     end)
@@ -3942,7 +3919,7 @@ end)
         end
     end)
     
-    Main:Toggle("Auto Random Surprise",_G.Auto_Random_Bone,function(value)
+    M:Toggle("Auto Random Surprise",_G.Auto_Random_Bone,function(value)
         _G.Auto_Random_Bone = value
     end)
     
@@ -3956,7 +3933,7 @@ end)
         end)
     end)
         
-        Main:Button("Checking Bone", function()
+        M:Button("Checking Bone", function()
     game.StarterGui:SetCore("SendNotification", {
         Title = "Checking Bone", 
         Text = ("Your Bone : "..(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones","Check")))
@@ -3965,9 +3942,9 @@ end)
 end)
         
                 
-    Main:Seperator("Observation")
+    M:Seperator("Observation")
     
-    local ObservationRange = Main:Label("")
+    local ObservationRange = M:Label("")
     
     spawn(function()
         while wait() do
@@ -3977,7 +3954,7 @@ end)
         end
     end)
     
-    Main:Toggle("Auto Farm Observation",_G.AutoObservation,function(value)
+    M:Toggle("Auto Farm Observation",_G.AutoObservation,function(value)
         _G.AutoObservation = value
         StopTween(_G.AutoObservation)
     end)
@@ -3999,7 +3976,7 @@ end)
         end
     end)
     
-    Main:Toggle("Auto Farm Observation Hop",_G.AutoObservation_Hop,function(value)
+    M:Toggle("Auto Farm Observation Hop",_G.AutoObservation_Hop,function(value)
         _G.AutoObservation_Hop = value
     end)
     
@@ -4076,14 +4053,14 @@ end)
         end)
     end)
     
-    Main:Seperator("Misc Saber")
+    M:Seperator("Saber")
     
-    Main:Toggle("Auto Saber",_G.AutoSaber,function(value)
+    M:Toggle("Auto Saber",_G.AutoSaber,function(value)
         _G.AutoSaber = value
         StopTween(_G.AutoSaber)
     end)
     
-    Main:Toggle("Auto Saber Hop",_G.AutoSaber_Hop,function(value)
+    M:Toggle("Auto Saber Hop",_G.AutoSaber_Hop,function(value)
         _G.AutoSaber_Hop = value
     end)
     
@@ -4125,9 +4102,9 @@ end)
         end
     end)
     
-    Main:Seperator("Legendary Sword")
+    M:Seperator("Legendary Sword")
     
-    Main:Toggle("Auto Legendary Sword",_G.AutoBuyLegendarySword,function(value)
+    M:Toggle("Auto Legendary Sword",_G.AutoBuyLegendarySword,function(value)
         _G.AutoBuyLegendarySword = value
     end)
     
@@ -4159,17 +4136,17 @@ end)
         end
     end)
     
-    Main:Toggle("Auto Legendary Sword Hop",_G.AutoBuyLegendarySword_Hop,function(value)
+    M:Toggle("Auto Legendary Sword Hop",_G.AutoBuyLegendarySword_Hop,function(value)
         _G.AutoBuyLegendarySword_Hop = value
     end)
     
-    Main:Seperator("Enchancement Colour")
+    M:Seperator("Enchancement Colour")
     
-    Main:Toggle("Auto Enchancement Colour",_G.AutoBuyEnchancementColour,function(value)
+    M:Toggle("Auto Enchancement Colour",_G.AutoBuyEnchancementColour,function(value)
         _G.AutoBuyEnchancementColour = value
     end)
     
-    Main:Toggle("Auto Enchancement Hop",_G.AutoBuyEnchancementColour_Hop,function(value)
+    M:Toggle("Auto Enchancement Hop",_G.AutoBuyEnchancementColour_Hop,function(value)
         _G.AutoBuyEnchancementColour_Hop = value
     end)
     
@@ -4189,9 +4166,9 @@ end)
         end
     end)
     
-    Main:Seperator("Misc Other")
+    M:Seperator("Other")
     
-    Main:Toggle("Auto Musketeer Hat",_G.AutoMusketeerHat,function(value)
+    M:Toggle("Auto Musketeer Hat",_G.AutoMusketeerHat,function(value)
         _G.AutoMusketeerHat = value
         StopTween(_G.AutoMusketeerHat)
     end)
@@ -4272,7 +4249,7 @@ end)
         end)
     end)
     
-    Main:Toggle("Auto Rainbow Haki",_G.Auto_Rainbow_Haki,function(value)
+    M:Toggle("Auto Rainbow Haki",_G.Auto_Rainbow_Haki,function(value)
         _G.Auto_Rainbow_Haki = value
         StopTween(_G.Auto_Rainbow_Haki)
     end)
@@ -4399,7 +4376,7 @@ end)
         end)
     end)
     
-    Main:Toggle("Auto Observation Haki v2",_G.AutoObservationv2,function(value)
+    M:Toggle("Auto Observation Haki v2",_G.AutoObservationv2,function(value)
         _G.AutoObservationv2 = value
         StopTween(_G.AutoObservationv2)
     end)
@@ -4444,7 +4421,7 @@ end)
         end
     end)
     
-    Main:Toggle("Auto Rengoku",_G.AutoRengoku,function(value)
+    M:Toggle("Auto Rengoku",_G.AutoRengoku,function(value)
         _G.AutoRengoku = value
         StopTween(_G.AutoRengoku)
     end)
@@ -4482,7 +4459,7 @@ end)
         end)
     end)
     
-    Main:Toggle("Auto Farm Ectoplasm",_G.AutoEctoplasm,function(value)
+    M:Toggle("Auto Farm Ectoplasm",_G.AutoEctoplasm,function(value)
         _G.AutoEctoplasm = value
         StopTween(_G.AutoEctoplasm)
     end)
@@ -4526,7 +4503,7 @@ end)
         end)
     end)
     
-    Main:Toggle("Auto Yama",_G.AutoYama,function(value)
+    M:Toggle("Auto Yama",_G.AutoYama,function(value)
         _G.AutoYama = value
         StopTween(_G.AutoYama)
     end)
@@ -4543,7 +4520,7 @@ end)
         end
     end)
     
-    Main:Toggle("Auto Evo Race (V2)",_G.Auto_EvoRace,function(value)
+    M:Toggle("Auto Evo Race (V2)",_G.Auto_EvoRace,function(value)
         _G.Auto_EvoRace = value
         StopTween(_G.Auto_EvoRace)
     end)
@@ -4598,7 +4575,7 @@ end)
         end)
     end)
     
-    Main:Toggle("Auto Bartlio Quest",_G.AutoBartilo,function(value)
+    M:Toggle("Auto Bartlio Quest",_G.AutoBartilo,function(value)
         _G.AutoBartilo = value
     end)
     
@@ -4691,7 +4668,7 @@ end)
         end)
     end)
     
-    Main:Toggle("Auto Holy Torch",_G.AutoHolyTorch,function(value)
+    M:Toggle("Auto Holy Torch",_G.AutoHolyTorch,function(value)
         _G.AutoHolyTorch = value
         StopTween(_G.AutoHolyTorch)
     end)
@@ -4943,6 +4920,19 @@ end)
         end
     end)
 
+
+        Ss:Seperator("Stats")
+
+    local Pointstat = Ss:Label("Stat Points")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                Pointstat:Set("Stat Points : "..tostring(game:GetService("Players")["LocalPlayer"].Data.Points.Value))
+            end)
+        end
+    end)
+    
 Ss:Toggle("Melee",false,function(Value)
 melee = Value    
 end)
@@ -5028,7 +5018,8 @@ spawn(function()
     Ss:Textbox("Fake Bounty",true,function(value)
         game:GetService("Players").LocalPlayer.leaderstats["Bounty/Honor"].Value = value
     end)
-    
+
+	
     local plyserv = P:Label("Players")
 
     
@@ -5497,196 +5488,6 @@ spawn(function()
         end
     end)
     
-T:Seperator("World")
-    
-    T:Button("Teleport To Old World",function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelMain")
-    end)
-    
-    T:Button("Teleport To Second Sea",function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")
-    end)
-    
-    T:Button("Teleport To Third Sea",function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
-    end)
-    
-    T:Button("Teleport to Seabeast",function()
-        for i,v in pairs(game:GetService("Workspace").SeaBeasts:GetChildren()) do
-            if v:FindFirstChild("HumanoidRootPart") then
-                topos(v.HumanoidRootPart.CFrame*CFrame.new(0,100,0))
-            end
-        end
-    end)
-    
-    T:Seperator("Island")
-    
-    if World1 then
-        T:Dropdown("Select Island",{
-            "WindMill",
-            "Marine",
-            "Middle Town",
-            "Jungle",
-            "Pirate Village",
-            "Desert",
-            "Snow Island",
-            "MarineFord",
-            "Colosseum",
-            "Sky Island 1",
-            "Sky Island 2",
-            "Sky Island 3",
-            "Prison",
-            "Magma Village",
-            "Under Water Island",
-            "Fountain City",
-            "Shank Room",
-            "Mob Island"
-            },function(value)
-            _G.SelectIsland = value
-        end)
-    end
-    
-    if World2 then
-        T:Dropdown("Select Island",{
-            "The Cafe",
-            "Frist Spot",
-            "Dark Area",
-            "Flamingo Mansion",
-            "Flamingo Room",
-            "Green Zone",
-            "Factory",
-            "Colossuim",
-            "Zombie Island",
-            "Two Snow Mountain",
-            "Punk Hazard",
-            "Cursed Ship",
-            "Ice Castle",
-            "Forgotten Island",
-            "Ussop Island",
-            "Mini Sky Island"
-            },function(value)
-            _G.SelectIsland = value
-        end)
-    end
-    
-    if World3 then
-        T:Dropdown("Select Island",{
-            "Mansion",
-            "Port Town",
-            "Great Tree",
-            "Castle On The Sea",
-            "MiniSky", 
-            "Hydra Island",
-            "Floating Turtle",
-            "Haunted Castle",
-            "Ice Cream Island",
-            "Peanut Island",
-            "Cake Island"
-            },function(value)
-            _G.SelectIsland = value
-        end)
-    end
-    
-    T:Toggle("Teleport",false,function(value)
-        _G.TeleportIsland = value
-        if _G.TeleportIsland == true then
-            repeat wait()
-                if _G.SelectIsland == "WindMill" then
-                    topos(CFrame.new(979.79895019531, 16.516613006592, 1429.0466308594))
-                elseif _G.SelectIsland == "Marine" then
-                    topos(CFrame.new(-2566.4296875, 6.8556680679321, 2045.2561035156))
-                elseif _G.SelectIsland == "Middle Town" then
-                    topos(CFrame.new(-690.33081054688, 15.09425163269, 1582.2380371094))
-                elseif _G.SelectIsland == "Jungle" then
-                    topos(CFrame.new(-1612.7957763672, 36.852081298828, 149.12843322754))
-                elseif _G.SelectIsland == "Pirate Village" then
-                    topos(CFrame.new(-1181.3093261719, 4.7514905929565, 3803.5456542969))
-                elseif _G.SelectIsland == "Desert" then
-                    topos(CFrame.new(944.15789794922, 20.919729232788, 4373.3002929688))
-                elseif _G.SelectIsland == "Snow Island" then
-                    topos(CFrame.new(1347.8067626953, 104.66806030273, -1319.7370605469))
-                elseif _G.SelectIsland == "MarineFord" then
-                    topos(CFrame.new(-4914.8212890625, 50.963626861572, 4281.0278320313))
-                elseif _G.SelectIsland == "Colosseum" then
-                    topos( CFrame.new(-1427.6203613281, 7.2881078720093, -2792.7722167969))
-                elseif _G.SelectIsland == "Sky Island 1" then
-                    topos(CFrame.new(-4869.1025390625, 733.46051025391, -2667.0180664063))
-                elseif _G.SelectIsland == "Sky Island 2" then  
-                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-4607.82275, 872.54248, -1667.55688))
-                elseif _G.SelectIsland == "Sky Island 3" then
-                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-7894.6176757813, 5547.1416015625, -380.29119873047))
-                elseif _G.SelectIsland == "Prison" then
-                    topos( CFrame.new(4875.330078125, 5.6519818305969, 734.85021972656))
-                elseif _G.SelectIsland == "Magma Village" then
-                    topos(CFrame.new(-5247.7163085938, 12.883934020996, 8504.96875))
-                elseif _G.SelectIsland == "Under Water Island" then
-                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61163.8515625, 11.6796875, 1819.7841796875))
-                elseif _G.SelectIsland == "Fountain City" then
-                    topos(CFrame.new(5127.1284179688, 59.501365661621, 4105.4458007813))
-                elseif _G.SelectIsland == "Shank Room" then
-                    topos(CFrame.new(-1442.16553, 29.8788261, -28.3547478))
-                elseif _G.SelectIsland == "Mob Island" then
-                    topos(CFrame.new(-2850.20068, 7.39224768, 5354.99268))
-                elseif _G.SelectIsland == "The Cafe" then
-                    topos(CFrame.new(-380.47927856445, 77.220390319824, 255.82550048828))
-                elseif _G.SelectIsland == "Frist Spot" then
-                    topos(CFrame.new(-11.311455726624, 29.276733398438, 2771.5224609375))
-                elseif _G.SelectIsland == "Dark Area" then
-                    topos(CFrame.new(3780.0302734375, 22.652164459229, -3498.5859375))
-                elseif _G.SelectIsland == "Flamingo Mansion" then
-                    topos(CFrame.new(-483.73370361328, 332.0383605957, 595.32708740234))
-                elseif _G.SelectIsland == "Flamingo Room" then
-                    topos(CFrame.new(2284.4140625, 15.152037620544, 875.72534179688))
-                elseif _G.SelectIsland == "Green Zone" then
-                    topos( CFrame.new(-2448.5300292969, 73.016105651855, -3210.6306152344))
-                elseif _G.SelectIsland == "Factory" then
-                    topos(CFrame.new(424.12698364258, 211.16171264648, -427.54049682617))
-                elseif _G.SelectIsland == "Colossuim" then
-                    topos( CFrame.new(-1503.6224365234, 219.7956237793, 1369.3101806641))
-                elseif _G.SelectIsland == "Zombie Island" then
-                    topos(CFrame.new(-5622.033203125, 492.19604492188, -781.78552246094))
-                elseif _G.SelectIsland == "Two Snow Mountain" then
-                    topos(CFrame.new(753.14288330078, 408.23559570313, -5274.6147460938))
-                elseif _G.SelectIsland == "Punk Hazard" then
-                    topos(CFrame.new(-6127.654296875, 15.951762199402, -5040.2861328125))
-                elseif _G.SelectIsland == "Cursed Ship" then
-                    topos(CFrame.new(923.40197753906, 125.05712890625, 32885.875))
-                elseif _G.SelectIsland == "Ice Castle" then
-                    topos(CFrame.new(6148.4116210938, 294.38687133789, -6741.1166992188))
-                elseif _G.SelectIsland == "Forgotten Island" then
-                    topos(CFrame.new(-3032.7641601563, 317.89672851563, -10075.373046875))
-                elseif _G.SelectIsland == "Ussop Island" then
-                    topos(CFrame.new(4816.8618164063, 8.4599885940552, 2863.8195800781))
-                elseif _G.SelectIsland == "Mini Sky Island" then
-                    topos(CFrame.new(-288.74060058594, 49326.31640625, -35248.59375))
-                elseif _G.SelectIsland == "Great Tree" then
-                    topos(CFrame.new(2681.2736816406, 1682.8092041016, -7190.9853515625))
-                elseif _G.SelectIsland == "Castle On The Sea" then
-                    topos(CFrame.new(-5074.45556640625, 314.5155334472656, -2991.054443359375))
-                elseif _G.SelectIsland == "MiniSky" then
-                    topos(CFrame.new(-260.65557861328, 49325.8046875, -35253.5703125))
-                elseif _G.SelectIsland == "Port Town" then
-                    topos(CFrame.new(-290.7376708984375, 6.729952812194824, 5343.5537109375))
-                elseif _G.SelectIsland == "Hydra Island" then
-                    topos(CFrame.new(5228.8842773438, 604.23400878906, 345.0400390625))
-                elseif _G.SelectIsland == "Floating Turtle" then
-                    topos(CFrame.new(-13274.528320313, 531.82073974609, -7579.22265625))
-                elseif _G.SelectIsland == "Mansion" then
-                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-12471.169921875, 374.94024658203, -7551.677734375))
-                elseif _G.SelectIsland == "Haunted Castle" then
-                    topos(CFrame.new(-9515.3720703125, 164.00624084473, 5786.0610351562))
-                elseif _G.SelectIsland == "Ice Cream Island" then
-                    topos(CFrame.new(-902.56817626953, 79.93204498291, -10988.84765625))
-                elseif _G.SelectIsland == "Peanut Island" then
-                    topos(CFrame.new(-2062.7475585938, 50.473892211914, -10232.568359375))
-                elseif _G.SelectIsland == "Cake Island" then
-                    topos(CFrame.new(-1884.7747802734375, 19.327526092529297, -11666.8974609375))
-                end
-            until not _G.TeleportIsland
-        end
-        StopTween(_G.TeleportIsland)
-    end)
-    
     local TimeRaid = R:Label("Wait For Dungeon")
     
     spawn(function()
@@ -5917,6 +5718,198 @@ end)
         end)
     end
 
+
+    T:Seperator("World")
+    
+    T:Button("Teleport To Old World",function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelMain")
+    end)
+    
+    T:Button("Teleport To Second Sea",function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")
+    end)
+    
+    T:Button("Teleport To Third Sea",function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
+    end)
+    
+    T:Button("Teleport to Seabeast",function()
+        for i,v in pairs(game:GetService("Workspace").SeaBeasts:GetChildren()) do
+            if v:FindFirstChild("HumanoidRootPart") then
+                topos(v.HumanoidRootPart.CFrame*CFrame.new(0,100,0))
+            end
+        end
+    end)
+    
+    T:Seperator("Island")
+    
+    if World1 then
+        T:Dropdown("Select Island",{
+            "WindMill",
+            "Marine",
+            "Middle Town",
+            "Jungle",
+            "Pirate Village",
+            "Desert",
+            "Snow Island",
+            "MarineFord",
+            "Colosseum",
+            "Sky Island 1",
+            "Sky Island 2",
+            "Sky Island 3",
+            "Prison",
+            "Magma Village",
+            "Under Water Island",
+            "Fountain City",
+            "Shank Room",
+            "Mob Island"
+            },function(value)
+            _G.SelectIsland = value
+        end)
+    end
+    
+    if World2 then
+        T:Dropdown("Select Island",{
+            "The Cafe",
+            "Frist Spot",
+            "Dark Area",
+            "Flamingo Mansion",
+            "Flamingo Room",
+            "Green Zone",
+            "Factory",
+            "Colossuim",
+            "Zombie Island",
+            "Two Snow Mountain",
+            "Punk Hazard",
+            "Cursed Ship",
+            "Ice Castle",
+            "Forgotten Island",
+            "Ussop Island",
+            "Mini Sky Island"
+            },function(value)
+            _G.SelectIsland = value
+        end)
+    end
+    
+    if World3 then
+        T:Dropdown("Select Island",{
+            "Mansion",
+            "Port Town",
+            "Great Tree",
+            "Castle On The Sea",
+            "MiniSky", 
+            "Hydra Island",
+            "Floating Turtle",
+            "Haunted Castle",
+            "Ice Cream Island",
+            "Peanut Island",
+            "Cake Island"
+            },function(value)
+            _G.SelectIsland = value
+        end)
+    end
+    
+    T:Toggle("Teleport",false,function(value)
+        _G.TeleportIsland = value
+        if _G.TeleportIsland == true then
+            repeat wait()
+                if _G.SelectIsland == "WindMill" then
+                    topos(CFrame.new(979.79895019531, 16.516613006592, 1429.0466308594))
+                elseif _G.SelectIsland == "Marine" then
+                    topos(CFrame.new(-2566.4296875, 6.8556680679321, 2045.2561035156))
+                elseif _G.SelectIsland == "Middle Town" then
+                    topos(CFrame.new(-690.33081054688, 15.09425163269, 1582.2380371094))
+                elseif _G.SelectIsland == "Jungle" then
+                    topos(CFrame.new(-1612.7957763672, 36.852081298828, 149.12843322754))
+                elseif _G.SelectIsland == "Pirate Village" then
+                    topos(CFrame.new(-1181.3093261719, 4.7514905929565, 3803.5456542969))
+                elseif _G.SelectIsland == "Desert" then
+                    topos(CFrame.new(944.15789794922, 20.919729232788, 4373.3002929688))
+                elseif _G.SelectIsland == "Snow Island" then
+                    topos(CFrame.new(1347.8067626953, 104.66806030273, -1319.7370605469))
+                elseif _G.SelectIsland == "MarineFord" then
+                    topos(CFrame.new(-4914.8212890625, 50.963626861572, 4281.0278320313))
+                elseif _G.SelectIsland == "Colosseum" then
+                    topos( CFrame.new(-1427.6203613281, 7.2881078720093, -2792.7722167969))
+                elseif _G.SelectIsland == "Sky Island 1" then
+                    topos(CFrame.new(-4869.1025390625, 733.46051025391, -2667.0180664063))
+                elseif _G.SelectIsland == "Sky Island 2" then  
+                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-4607.82275, 872.54248, -1667.55688))
+                elseif _G.SelectIsland == "Sky Island 3" then
+                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-7894.6176757813, 5547.1416015625, -380.29119873047))
+                elseif _G.SelectIsland == "Prison" then
+                    topos( CFrame.new(4875.330078125, 5.6519818305969, 734.85021972656))
+                elseif _G.SelectIsland == "Magma Village" then
+                    topos(CFrame.new(-5247.7163085938, 12.883934020996, 8504.96875))
+                elseif _G.SelectIsland == "Under Water Island" then
+                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61163.8515625, 11.6796875, 1819.7841796875))
+                elseif _G.SelectIsland == "Fountain City" then
+                    topos(CFrame.new(5127.1284179688, 59.501365661621, 4105.4458007813))
+                elseif _G.SelectIsland == "Shank Room" then
+                    topos(CFrame.new(-1442.16553, 29.8788261, -28.3547478))
+                elseif _G.SelectIsland == "Mob Island" then
+                    topos(CFrame.new(-2850.20068, 7.39224768, 5354.99268))
+                elseif _G.SelectIsland == "The Cafe" then
+                    topos(CFrame.new(-380.47927856445, 77.220390319824, 255.82550048828))
+                elseif _G.SelectIsland == "Frist Spot" then
+                    topos(CFrame.new(-11.311455726624, 29.276733398438, 2771.5224609375))
+                elseif _G.SelectIsland == "Dark Area" then
+                    topos(CFrame.new(3780.0302734375, 22.652164459229, -3498.5859375))
+                elseif _G.SelectIsland == "Flamingo Mansion" then
+                    topos(CFrame.new(-483.73370361328, 332.0383605957, 595.32708740234))
+                elseif _G.SelectIsland == "Flamingo Room" then
+                    topos(CFrame.new(2284.4140625, 15.152037620544, 875.72534179688))
+                elseif _G.SelectIsland == "Green Zone" then
+                    topos( CFrame.new(-2448.5300292969, 73.016105651855, -3210.6306152344))
+                elseif _G.SelectIsland == "Factory" then
+                    topos(CFrame.new(424.12698364258, 211.16171264648, -427.54049682617))
+                elseif _G.SelectIsland == "Colossuim" then
+                    topos( CFrame.new(-1503.6224365234, 219.7956237793, 1369.3101806641))
+                elseif _G.SelectIsland == "Zombie Island" then
+                    topos(CFrame.new(-5622.033203125, 492.19604492188, -781.78552246094))
+                elseif _G.SelectIsland == "Two Snow Mountain" then
+                    topos(CFrame.new(753.14288330078, 408.23559570313, -5274.6147460938))
+                elseif _G.SelectIsland == "Punk Hazard" then
+                    topos(CFrame.new(-6127.654296875, 15.951762199402, -5040.2861328125))
+                elseif _G.SelectIsland == "Cursed Ship" then
+                    topos(CFrame.new(923.40197753906, 125.05712890625, 32885.875))
+                elseif _G.SelectIsland == "Ice Castle" then
+                    topos(CFrame.new(6148.4116210938, 294.38687133789, -6741.1166992188))
+                elseif _G.SelectIsland == "Forgotten Island" then
+                    topos(CFrame.new(-3032.7641601563, 317.89672851563, -10075.373046875))
+                elseif _G.SelectIsland == "Ussop Island" then
+                    topos(CFrame.new(4816.8618164063, 8.4599885940552, 2863.8195800781))
+                elseif _G.SelectIsland == "Mini Sky Island" then
+                    topos(CFrame.new(-288.74060058594, 49326.31640625, -35248.59375))
+                elseif _G.SelectIsland == "Great Tree" then
+                    topos(CFrame.new(2681.2736816406, 1682.8092041016, -7190.9853515625))
+                elseif _G.SelectIsland == "Castle On The Sea" then
+                    topos(CFrame.new(-5074.45556640625, 314.5155334472656, -2991.054443359375))
+                elseif _G.SelectIsland == "MiniSky" then
+                    topos(CFrame.new(-260.65557861328, 49325.8046875, -35253.5703125))
+                elseif _G.SelectIsland == "Port Town" then
+                    topos(CFrame.new(-290.7376708984375, 6.729952812194824, 5343.5537109375))
+                elseif _G.SelectIsland == "Hydra Island" then
+                    topos(CFrame.new(5228.8842773438, 604.23400878906, 345.0400390625))
+                elseif _G.SelectIsland == "Floating Turtle" then
+                    topos(CFrame.new(-13274.528320313, 531.82073974609, -7579.22265625))
+                elseif _G.SelectIsland == "Mansion" then
+                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-12471.169921875, 374.94024658203, -7551.677734375))
+                elseif _G.SelectIsland == "Haunted Castle" then
+                    topos(CFrame.new(-9515.3720703125, 164.00624084473, 5786.0610351562))
+                elseif _G.SelectIsland == "Ice Cream Island" then
+                    topos(CFrame.new(-902.56817626953, 79.93204498291, -10988.84765625))
+                elseif _G.SelectIsland == "Peanut Island" then
+                    topos(CFrame.new(-2062.7475585938, 50.473892211914, -10232.568359375))
+                elseif _G.SelectIsland == "Cake Island" then
+                    topos(CFrame.new(-1884.7747802734375, 19.327526092529297, -11666.8974609375))
+                end
+            until not _G.TeleportIsland
+        end
+        StopTween(_G.TeleportIsland)
+    end)
+    
+
     S:Seperator("Abilities")
     
     S:Button("Buy Geppo",function()
@@ -6055,7 +6048,7 @@ end)
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Slingshot","1")
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Slingshot","2")
     end)
-    
+	
     D:Seperator("Sniper")
     
     FruitList = {
@@ -6814,6 +6807,32 @@ spawn(function()
         end
     end
 end)
+
+local Client = game.Players.LocalPlayer
+local STOP = require(Client.PlayerScripts.CombatFramework.Particle)
+local STOPRL = require(game:GetService("ReplicatedStorage").CombatFramework.RigLib)
+if not shared.orl then
+    shared.orl = STOPRL.wrapAttackAnimationAsync
+end
+if not shared.cpc then
+    shared.cpc = STOP.play 
+end
+spawn(function()
+    game:GetService("RunService").Stepped:Connect(function()
+        STOPRL.wrapAttackAnimationAsync = function(a,b,c,d,func)
+            local Hits = STOPRL.getBladeHits(b,c,d)
+            if Hits then
+                STOP.play = function() end
+                a:Play(0.01,0.01,0.01)
+                func(Hits)
+                STOP.play = shared.cpc
+                wait(a.length * 0.5)
+                a:Stop()
+            end
+        end
+    end)
+end)
+--C
 
 
 	
