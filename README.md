@@ -146,7 +146,7 @@ function Update:Window(text,logo,keybind)
 	Name.TextSize = 17.000
 
 	local Hub = Instance.new("TextLabel")
-	Hub.Name = "Hub"
+	Hub.Name = "OMGHub"
 	Hub.Parent = Top
 	Hub.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 	Hub.BackgroundTransparency = 1.000
@@ -166,7 +166,7 @@ function Update:Window(text,logo,keybind)
 	Hubb.Position = UDim2.new(0, 480, 0, 0)
 	Hubb.Size = UDim2.new(0, 81, 0, 27)
 	Hubb.Font = Enum.Font.GothamSemibold
-	Hubb.Text = "VERSION : FREE"
+	Hubb.Text = "VERSION : PREMIUM."
 	Hubb.TextColor3 = _G.Color
 	Hubb.TextSize = 17.000
 	Hubb.TextXAlignment = Enum.TextXAlignment.Left
@@ -186,7 +186,7 @@ local LogoHub = Instance.new("ImageLabel")
 	LogoHub.BackgroundTransparency = 1.000
 	LogoHub.Position = UDim2.new(0, 0, 0, 1)
 	LogoHub.Size = UDim2.new(0, 150, 0, 150)
-	LogoHub.Image = "http://www.roblox.com/asset/?id="..tostring(9614132122)
+	LogoHub.Image = "http://www.roblox.com/asset/?id="..tostring(10398887335)
 
 	local ScrollTab = Instance.new("ScrollingFrame")
 	ScrollTab.Name = "ScrollTab"
@@ -280,7 +280,7 @@ local LogoHub = Instance.new("ImageLabel")
             PageImage.BackgroundTransparency = 1.000
             PageImage.Position = UDim2.new(0, 5, 0, 5)
             PageImage.Size = UDim2.new(0, 15, 0, 15)
-            PageImage.Image = "rbxassetid://"..tostring(Image)
+            PageImage.Image = "rbxassetid://"..tostring(10398887335)
             
 		local MainFramePage = Instance.new("ScrollingFrame")
 		MainFramePage.Name = text.."_Page"
@@ -496,7 +496,7 @@ local LogoToggle = Instance.new("ImageLabel")
 	LogoToggle.BackgroundTransparency = 1.000
 	LogoToggle.Position = UDim2.new(0, 7, 0, 2)
 	LogoToggle.Size = UDim2.new(0, 26, 0, 26)
-	LogoToggle.Image = "http://www.roblox.com/asset/?id="..tostring(9614132122)
+	LogoToggle.Image = "http://www.roblox.com/asset/?id="..tostring(10398887335)
 
 			Circle.Name = "Circle"
 			Circle.Parent = ToggleImage
@@ -595,7 +595,7 @@ local LogoToggle = Instance.new("ImageLabel")
 			DropImage.Position = UDim2.new(0, 435, 0, 6)
 			DropImage.Rotation = 180.000
 			DropImage.Size = UDim2.new(0, 20, 0, 20)
-			DropImage.Image = "rbxassetid://10162644180"
+			DropImage.Image = "rbxassetid://10398887335"
 			
 			DropButton.Name = "DropButton"
 			DropButton.Parent = Dropdown
