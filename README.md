@@ -112,7 +112,7 @@ function Update:Window(text,logo,keybind)
 	local yoo = string.gsub(tostring(keybind),"Enum.KeyCode.","")
 	
 	local SOMEXHUB = Instance.new("ScreenGui")
-	SOMEXHUB.Name = "SOMEXHUB"
+	SOMEXHUB.Name = "XeregHUB"
 	SOMEXHUB.Parent = game.CoreGui
 	SOMEXHUB.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
@@ -159,7 +159,7 @@ function Update:Window(text,logo,keybind)
 	Hub.TextXAlignment = Enum.TextXAlignment.Left
 	
 	local Hubb = Instance.new("TextLabel")
-	Hubb.Name = "Hubb"
+	Hubb.Name = "XeregHubb"
 	Hubb.Parent = Top
 	Hubb.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 	Hubb.BackgroundTransparency = 1.000
