@@ -18,7 +18,7 @@ SOMEXHUBMODILE.Name = "SOMEXHUBMODILE"
         MODILEGUISOMEXHUB.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
         MODILEGUISOMEXHUB.Size = UDim2.new(0, 50, 0, 50)
         MODILEGUISOMEXHUB.Font = Enum.Font.SourceSans
-        MODILEGUISOMEXHUB.Text = "KaiXHub"
+        MODILEGUISOMEXHUB.Text = "X"
         MODILEGUISOMEXHUB.TextColor3 = Color3.fromRGB(255, 255, 255)
         MODILEGUISOMEXHUB.TextSize = 14.000
         MODILEGUISOMEXHUB.Draggable = true
@@ -40,7 +40,7 @@ SOMEXHUBMODILE.Name = "SOMEXHUBMODILE"
         MODILEMAGE.BorderSizePixel = 0
         MODILEMAGE.Position = UDim2.new(0, 3, 0, 2)
         MODILEMAGE.Size = UDim2.new(0, 45, 0, 45)
-        MODILEMAGE.Image = "rbxassetid://10398887335"
+        MODILEMAGE.Image = "rbxassetid://9614132122"
 
 do local GUI = game.CoreGui:FindFirstChild("SOMEXHUB");if GUI then GUI:Destroy();end;if _G.Color == nil then
        _G.Color = Color3.fromRGB(255,0,0)
@@ -118,7 +118,7 @@ function Update:Window(text,logo,keybind)
 
 	local Main = Instance.new("Frame")
 	Main.Name = "Main"
-	Main.Parent = KAIXHUB
+	Main.Parent = SOMEXHUB
 	Main.ClipsDescendants = true
 	Main.AnchorPoint = Vector2.new(0.5,0.5)
 	Main.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
@@ -146,14 +146,14 @@ function Update:Window(text,logo,keybind)
 	Name.TextSize = 17.000
 
 	local Hub = Instance.new("TextLabel")
-	Hub.Name = "KaiXHub"
+	Hub.Name = "Hub"
 	Hub.Parent = Top
 	Hub.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 	Hub.BackgroundTransparency = 1.000
 	Hub.Position = UDim2.new(0, 85, 0, 0)
 	Hub.Size = UDim2.new(0, 81, 0, 27)
 	Hub.Font = Enum.Font.GothamSemibold
-	Hub.Text = " KaiXHUB | BF MOBILE"
+	Hub.Text = " HUB | BF MOBILE OR PC"
 	Hub.TextColor3 = _G.Color
 	Hub.TextSize = 17.000
 	Hub.TextXAlignment = Enum.TextXAlignment.Left
@@ -166,7 +166,7 @@ function Update:Window(text,logo,keybind)
 	Hubb.Position = UDim2.new(0, 480, 0, 0)
 	Hubb.Size = UDim2.new(0, 81, 0, 27)
 	Hubb.Font = Enum.Font.GothamSemibold
-	Hubb.Text = "VERSION : Nahee"
+	Hubb.Text = "VERSION : FREE"
 	Hubb.TextColor3 = _G.Color
 	Hubb.TextSize = 17.000
 	Hubb.TextXAlignment = Enum.TextXAlignment.Left
@@ -186,7 +186,7 @@ local LogoHub = Instance.new("ImageLabel")
 	LogoHub.BackgroundTransparency = 1.000
 	LogoHub.Position = UDim2.new(0, 0, 0, 1)
 	LogoHub.Size = UDim2.new(0, 150, 0, 150)
-	LogoHub.Image = "http://www.roblox.com/asset/?id="..tostring(10398887335)
+	LogoHub.Image = "http://www.roblox.com/asset/?id="..tostring(9614132122)
 
 	local ScrollTab = Instance.new("ScrollingFrame")
 	ScrollTab.Name = "ScrollTab"
