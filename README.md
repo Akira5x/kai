@@ -40,7 +40,7 @@ SOMEXHUBMODILE.Name = "SOMEXHUBMODILE"
         MODILEMAGE.BorderSizePixel = 0
         MODILEMAGE.Position = UDim2.new(0, 3, 0, 2)
         MODILEMAGE.Size = UDim2.new(0, 45, 0, 45)
-        MODILEMAGE.Image = "rbxassetid://9614132122"
+        MODILEMAGE.Image = "rbxassetid://10398887335"
 
 do local GUI = game.CoreGui:FindFirstChild("SOMEXHUB");if GUI then GUI:Destroy();end;if _G.Color == nil then
        _G.Color = Color3.fromRGB(255,0,0)
@@ -146,7 +146,7 @@ function Update:Window(text,logo,keybind)
 	Name.TextSize = 17.000
 
 	local Hub = Instance.new("TextLabel")
-	Hub.Name = "OMGHub"
+	Hub.Name = "XeregHub"
 	Hub.Parent = Top
 	Hub.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 	Hub.BackgroundTransparency = 1.000
@@ -166,7 +166,7 @@ function Update:Window(text,logo,keybind)
 	Hubb.Position = UDim2.new(0, 480, 0, 0)
 	Hubb.Size = UDim2.new(0, 81, 0, 27)
 	Hubb.Font = Enum.Font.GothamSemibold
-	Hubb.Text = "VERSION : PREMIUM."
+	Hubb.Text = "VERSION : PREMIUM.  "
 	Hubb.TextColor3 = _G.Color
 	Hubb.TextSize = 17.000
 	Hubb.TextXAlignment = Enum.TextXAlignment.Left
